@@ -5,9 +5,12 @@ export const fetchProducts = createAsyncThunk(
   "product/fetchProducts",
   async (params, thunkAPI) => {
     try {
-      const response = await axios.get("http://localhost:5000/api/products", {
-        params,
-      });
+      const response = await axios.get(
+        "https://assignment-internship-1.onrender.com/api/products",
+        {
+          params,
+        }
+      );
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(

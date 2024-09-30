@@ -1,5 +1,3 @@
-// src/slices/categorySlice.js
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -8,7 +6,9 @@ export const fetchCategories = createAsyncThunk(
   "category/fetchCategories",
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get("http://localhost:5000/api/categories");
+      const response = await axios.get(
+        "https://assignment-internship-1.onrender.com/api/categories"
+      );
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(
