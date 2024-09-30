@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Provider, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import CategoryList from "./components/CategoryList";
 import ProductList from "./components/ProductList";
 import SearchBar from "./components/SearchBar";

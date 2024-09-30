@@ -22,7 +22,7 @@ const ProductList = () => {
   const { loading, products, error } = productState;
   const total = products.length;
 
-  const { page = 1, search = "" } = queryString.parse(location.search);
+  const { page = 1 } = queryString.parse(location.search);
   const currentPage = Number(page);
 
   // Set the product limit to 10 per page

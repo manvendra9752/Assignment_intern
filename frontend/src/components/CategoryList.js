@@ -58,7 +58,7 @@ const CategoryList = () => {
   }, [dispatch, categories]);
   useEffect(() => {
     navigate("/");
-  }, []);
+  }, [navigate]);
 
   const params = useMemo(
     () => queryString.parse(location.search),
@@ -85,7 +85,7 @@ const CategoryList = () => {
       const newSearch = queryString.stringify(params);
       navigate(`?${newSearch}`);
     },
-    [dispatch, params, navigate]
+    [dispatch, navigate, location.search]
   );
 
   return (

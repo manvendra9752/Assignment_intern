@@ -9,18 +9,18 @@ const SearchBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
-  const { search: query = "" } = queryString.parse(location.search) || "";
 
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    // eslint-disable-next-line
     const params = queryString.parse(location.search);
     if (!searchTerm) {
       delete params.search;
       delete params.page;
     }
     const newSearch = queryString.stringify(params);
-    navigate(`?${newSearch}`);
+    navigate(`?${newSearch}`); // eslint-disable-next-line
   }, []);
 
   const handleSearch = (e) => {
